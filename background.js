@@ -41,10 +41,7 @@ getHTML = (tab) => {
 
 WSifyHTML = (html, symbols) => {
   // create a regex pattern to match currency symbols followed by amounts
-  const pattern = new RegExp(
-    `(${symbols.join("|")})\\s*\\d+(\\.\\d{1,2})?`,
-    "g"
-  );
+  const pattern = new RegExp(`(${symbols.join("|")})\s*\d*.\d*/`, "g");
   // replace the matched patterns with an empty string
   const WSHtml = html.replace(pattern, "");
 };
