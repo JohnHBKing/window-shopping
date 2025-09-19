@@ -1,0 +1,20 @@
+{
+  "name": "Window Shopping",
+  "description": "A Chrome extension which hides prices on websites - leaving you with a window shopping experience.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "icons/window_icon.png"
+  },
+  "permissions": ["scripting", "activeTab", "tabs", "storage", "offscreen"],
+  "content_scripts": [
+    {
+      "matches": ["*"],
+      "js": ["extension/insert.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
